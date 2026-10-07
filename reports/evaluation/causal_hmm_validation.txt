@@ -1,0 +1,20 @@
+CAUSAL HMM VALIDATION REPORT
+==================================================
+Rows: 4064
+Training rows: 3251
+Testing rows: 813
+Features: ['daily_return', 'volatility_5d']
+
+CHECK RESULTS:
+Output file structure: PASS
+Date alignment: PASS
+Probability validity: PASS
+Future-independence: PASS
+Train/test labels: PASS
+
+Maximum past-probability difference: 0
+
+LIMITATION:
+This validates the forward-filtering causality property and
+saved output structure. It does not prove every downstream
+model or strategy is free from leakage.

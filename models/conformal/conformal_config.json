@@ -1,0 +1,19 @@
+{
+  "step": 26,
+  "project": "Bayesian Regime Detection Engine",
+  "input_file": "C:\\BAYESIAN_REGIME_ENGINE\\data\\processed\\advanced_ensemble_predictions.csv",
+  "output_file": "C:\\BAYESIAN_REGIME_ENGINE\\data\\processed\\conformal_predictions.csv",
+  "ensemble_probability_column": "constrained_stacking_probability",
+  "target_coverage": 0.9,
+  "alpha": 0.09999999999999998,
+  "calibration_fraction": 0.4,
+  "rolling_window": 100,
+  "methods": [
+    "Split Conformal",
+    "Adaptive Prediction Sets",
+    "Rolling Coverage Monitoring",
+    "Distribution Shift Monitoring"
+  ],
+  "chronological_split": true,
+  "future_leakage": false
+}

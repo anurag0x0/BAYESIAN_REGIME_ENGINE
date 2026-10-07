@@ -1,0 +1,21 @@
+MODEL EVALUATION & COMPARISON
+==============================
+Common observations: 813
+Forecast start: 2023-06-15
+Forecast end: 2026-09-30
+
+METRICS
+   model  observations  accuracy  precision  recall  f1_score  brier_score  roc_auc  log_loss
+Bayesian           813    0.5154     0.5278  0.7953    0.6345       0.2492   0.5179    0.6916
+     SMC           813    0.5264     0.5495  0.5814    0.5650       0.2509   0.5232    0.6950
+ Chronos           813    0.5351     0.5445  0.7395    0.6272       0.3431   0.5326    3.4449
+Ensemble           813    0.5264     0.5386  0.7302    0.6199       0.2562   0.5359    0.7067
+
+CONFUSION MATRICES
+   model  true_negative  false_positive  false_negative  true_positive
+Bayesian             77             306              88            342
+     SMC            178             205             180            250
+ Chronos            117             266             112            318
+Ensemble            114             269             116            314
+
+Historical evaluation only; results do not guarantee future performance.

@@ -1,0 +1,32 @@
+TIMESFM FOUNDATION MODEL BENCHMARK
+============================================================
+Model: TimesFM 2.5 200M PyTorch
+Model ID: google/timesfm-2.5-200m-pytorch
+Context length: 512
+Forecast horizon: 1
+Training observations: 3251
+Test observations: 813
+Forecasts generated: 812
+
+PERFORMANCE
+Accuracy: 0.523399
+Precision: 0.538321
+Recall: 0.687646
+F1: 0.603889
+ROC-AUC: 0.544864
+Brier Score: 0.249765
+Log Loss: 0.692924
+Return MAE: 0.00591658
+Return RMSE: 0.00828844
+
+UNCERTAINTY
+Mean predictive std: 0.00646638
+Mean confidence: 0.56592676
+Mean entropy: 0.67933627
+
+DATA ALIGNMENT
+Date column: date
+Return column: daily_return
+Target column: target_next_day_direction
+Evaluation: chronological walk-forward
+Future observations are excluded from each forecast context.

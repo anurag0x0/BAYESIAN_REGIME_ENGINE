@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Bayesian Regime Detection Engine
+</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fa;
+    color: #17202a;
+}
+
+.header {
+    padding: 35px 45px;
+
+    background: #111827;
+    color: white;
+}
+
+.header h1 {
+    margin: 0 0 10px 0;
+    font-size: 30px;
+}
+
+.header p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 35px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 18px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.06);
+}
+
+.stat-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #5b6573;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.stat-subtitle {
+    font-size: 12px;
+    color: #7b8491;
+    margin-top: 5px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.06);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 12px;
+    background: #eef1f5;
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 11px;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.data-table tr:hover {
+    background: #f9fafb;
+}
+
+.highlight {
+    background: white;
+    border-left: 5px solid #111827;
+
+    padding: 20px;
+
+    border-radius: 8px;
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 25px;
+
+    text-align: center;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.warning {
+    background: #fff7ed;
+    border-left: 5px solid #f97316;
+
+    padding: 18px;
+    border-radius: 8px;
+}
+
+@media(max-width: 700px) {
+
+    .header {
+        padding: 25px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="header">
+
+<h1>
+Bayesian Regime Detection Engine
+</h1>
+
+<p>
+Indian Equity Direction Forecasting &
+Causal Market Regime Analysis
+</p>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- OVERVIEW -->
+
+<div class="section">
+
+<h2>Project Overview</h2>
+
+<div class="cards">
+
+<div class="stat-card">
+
+<div class="stat-title">
+Walk-Forward Observations
+</div>
+
+<div class="stat-value">
+812
+</div>
+
+<div class="stat-subtitle">
+Out-of-sample evaluation
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-title">
+Best Historical Accuracy
+</div>
+
+<div class="stat-value">
+52.71%
+</div>
+
+<div class="stat-subtitle">
+SMC
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-title">
+Models Evaluated
+</div>
+
+<div class="stat-value">
+3
+</div>
+
+<div class="stat-subtitle">
+Bayesian / SMC / Ensemble
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-title">
+Market Regimes
+</div>
+
+<div class="stat-value">
+3
+</div>
+
+<div class="stat-subtitle">
+Low / Medium / High Volatility
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- REGIME DISTRIBUTION -->
+
+<div class="section">
+
+<h2>
+Causal HMM Test Regime Distribution
+</h2>
+
+<div class="cards">
+
+
+    <div class="stat-card">
+        <div class="stat-title">Low Volatility</div>
+        <div class="stat-value">567</div>
+        <div class="stat-subtitle">Test observations</div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-title">Medium Volatility</div>
+        <div class="stat-value">213</div>
+        <div class="stat-subtitle">Test observations</div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-title">High Volatility</div>
+        <div class="stat-value">33</div>
+        <div class="stat-subtitle">Test observations</div>
+    </div>
+    
+
+</div>
+
+</div>
+
+
+<!-- MODEL PERFORMANCE -->
+
+<div class="section">
+
+<h2>
+Walk-Forward Model Performance
+</h2>
+
+<div class="table-wrapper">
+
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>observations</th>
+      <th>accuracy</th>
+      <th>brier_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bayesian</td>
+      <td>812</td>
+      <td>0.5160</td>
+      <td>0.2492</td>
+    </tr>
+    <tr>
+      <td>SMC</td>
+      <td>812</td>
+      <td>0.5271</td>
+      <td>0.2507</td>
+    </tr>
+    <tr>
+      <td>Ensemble</td>
+      <td>812</td>
+      <td>0.5271</td>
+      <td>0.2559</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+
+<!-- REGIME PERFORMANCE -->
+
+<div class="section">
+
+<h2>
+Causal Regime Integration
+</h2>
+
+<div class="table-wrapper">
+
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>model</th>
+      <th>observations</th>
+      <th>accuracy</th>
+      <th>brier_score</th>
+      <th>actual_positive_rate</th>
+      <th>mean_probability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>High Volatility</td>
+      <td>Bayesian</td>
+      <td>33</td>
+      <td>0.6061</td>
+      <td>0.2477</td>
+      <td>0.6364</td>
+      <td>0.5247</td>
+    </tr>
+    <tr>
+      <td>High Volatility</td>
+      <td>SMC</td>
+      <td>33</td>
+      <td>0.4545</td>
+      <td>0.2637</td>
+      <td>0.6364</td>
+      <td>0.4808</td>
+    </tr>
+    <tr>
+      <td>High Volatility</td>
+      <td>Ensemble</td>
+      <td>33</td>
+      <td>0.4545</td>
+      <td>0.2617</td>
+      <td>0.6364</td>
+      <td>0.5923</td>
+    </tr>
+    <tr>
+      <td>Low Volatility</td>
+      <td>Bayesian</td>
+      <td>567</td>
+      <td>0.5062</td>
+      <td>0.2499</td>
+      <td>0.5132</td>
+      <td>0.5107</td>
+    </tr>
+    <tr>
+      <td>Low Volatility</td>
+      <td>SMC</td>
+      <td>567</td>
+      <td>0.5256</td>
+      <td>0.2517</td>
+      <td>0.5132</td>
+      <td>0.5177</td>
+    </tr>
+    <tr>
+      <td>Low Volatility</td>
+      <td>Ensemble</td>
+      <td>567</td>
+      <td>0.5379</td>
+      <td>0.2553</td>
+      <td>0.5132</td>
+      <td>0.5641</td>
+    </tr>
+    <tr>
+      <td>Medium Volatility</td>
+      <td>Bayesian</td>
+      <td>212</td>
+      <td>0.5283</td>
+      <td>0.2475</td>
+      <td>0.5566</td>
+      <td>0.5119</td>
+    </tr>
+    <tr>
+      <td>Medium Volatility</td>
+      <td>SMC</td>
+      <td>212</td>
+      <td>0.5425</td>
+      <td>0.2461</td>
+      <td>0.5566</td>
+      <td>0.4907</td>
+    </tr>
+    <tr>
+      <td>Medium Volatility</td>
+      <td>Ensemble</td>
+      <td>212</td>
+      <td>0.5094</td>
+      <td>0.2567</td>
+      <td>0.5566</td>
+      <td>0.5718</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+
+<!-- STATISTICAL TESTS -->
+
+<div class="section">
+
+<h2>
+Statistical Significance
+</h2>
+
+<div class="table-wrapper">
+
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model_a</th>
+      <th>model_b</th>
+      <th>accuracy_a</th>
+      <th>accuracy_b</th>
+      <th>accuracy_difference</th>
+      <th>discordant_a_correct</th>
+      <th>discordant_b_correct</th>
+      <th>mcnemar_p_value</th>
+      <th>significant_at_0_05</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bayesian</td>
+      <td>SMC</td>
+      <td>0.5160</td>
+      <td>0.5271</td>
+      <td>-0.0111</td>
+      <td>141</td>
+      <td>150</td>
+      <td>0.6392</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>Bayesian</td>
+      <td>Ensemble</td>
+      <td>0.5160</td>
+      <td>0.5271</td>
+      <td>-0.0111</td>
+      <td>110</td>
+      <td>119</td>
+      <td>0.5971</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>SMC</td>
+      <td>Ensemble</td>
+      <td>0.5271</td>
+      <td>0.5271</td>
+      <td>0.0000</td>
+      <td>131</td>
+      <td>131</td>
+      <td>1.0000</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+
+<!-- BOOTSTRAP -->
+
+<div class="section">
+
+<h2>
+Bootstrap Confidence Intervals
+</h2>
+
+<div class="table-wrapper">
+
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>accuracy</th>
+      <th>bootstrap_ci_lower</th>
+      <th>bootstrap_ci_upper</th>
+      <th>confidence_level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bayesian</td>
+      <td>0.5160</td>
+      <td>0.4827</td>
+      <td>0.5505</td>
+      <td>0.9500</td>
+    </tr>
+    <tr>
+      <td>SMC</td>
+      <td>0.5271</td>
+      <td>0.4926</td>
+      <td>0.5616</td>
+      <td>0.9500</td>
+    </tr>
+    <tr>
+      <td>Ensemble</td>
+      <td>0.5271</td>
+      <td>0.4926</td>
+      <td>0.5616</td>
+      <td>0.9500</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+
+<!-- REGIME ROBUSTNESS -->
+
+<div class="section">
+
+<h2>
+Regime Robustness
+</h2>
+
+<div class="table-wrapper">
+
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>model</th>
+      <th>observations</th>
+      <th>accuracy</th>
+      <th>brier_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>High Volatility</td>
+      <td>Bayesian</td>
+      <td>33</td>
+      <td>0.6061</td>
+      <td>0.2477</td>
+    </tr>
+    <tr>
+      <td>High Volatility</td>
+      <td>SMC</td>
+      <td>33</td>
+      <td>0.4545</td>
+      <td>0.2637</td>
+    </tr>
+    <tr>
+      <td>High Volatility</td>
+      <td>Ensemble</td>
+      <td>33</td>
+      <td>0.4545</td>
+      <td>0.2617</td>
+    </tr>
+    <tr>
+      <td>Low Volatility</td>
+      <td>Bayesian</td>
+      <td>567</td>
+      <td>0.5062</td>
+      <td>0.2499</td>
+    </tr>
+    <tr>
+      <td>Low Volatility</td>
+      <td>SMC</td>
+      <td>567</td>
+      <td>0.5256</td>
+      <td>0.2517</td>
+    </tr>
+    <tr>
+      <td>Low Volatility</td>
+      <td>Ensemble</td>
+      <td>567</td>
+      <td>0.5379</td>
+      <td>0.2553</td>
+    </tr>
+    <tr>
+      <td>Medium Volatility</td>
+      <td>Bayesian</td>
+      <td>212</td>
+      <td>0.5283</td>
+      <td>0.2475</td>
+    </tr>
+    <tr>
+      <td>Medium Volatility</td>
+      <td>SMC</td>
+      <td>212</td>
+      <td>0.5425</td>
+      <td>0.2461</td>
+    </tr>
+    <tr>
+      <td>Medium Volatility</td>
+      <td>Ensemble</td>
+      <td>212</td>
+      <td>0.5094</td>
+      <td>0.2567</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+
+<!-- YEARLY -->
+
+<div class="section">
+
+<h2>
+Year-wise Walk-Forward Performance
+</h2>
+
+<div class="table-wrapper">
+
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>year</th>
+      <th>model</th>
+      <th>observations</th>
+      <th>accuracy</th>
+      <th>brier_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2023</td>
+      <td>Bayesian</td>
+      <td>133</td>
+      <td>0.5940</td>
+      <td>0.2474</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>SMC</td>
+      <td>133</td>
+      <td>0.5714</td>
+      <td>0.2394</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Ensemble</td>
+      <td>133</td>
+      <td>0.5865</td>
+      <td>0.2430</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Bayesian</td>
+      <td>246</td>
+      <td>0.5122</td>
+      <td>0.2483</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>SMC</td>
+      <td>246</td>
+      <td>0.5285</td>
+      <td>0.2515</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Ensemble</td>
+      <td>246</td>
+      <td>0.5407</td>
+      <td>0.2626</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>Bayesian</td>
+      <td>249</td>
+      <td>0.5181</td>
+      <td>0.2493</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>SMC</td>
+      <td>249</td>
+      <td>0.5100</td>
+      <td>0.2523</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>Ensemble</td>
+      <td>249</td>
+      <td>0.4980</td>
+      <td>0.2531</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>Bayesian</td>
+      <td>184</td>
+      <td>0.4620</td>
+      <td>0.2517</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>SMC</td>
+      <td>184</td>
+      <td>0.5163</td>
+      <td>0.2558</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>Ensemble</td>
+      <td>184</td>
+      <td>0.5054</td>
+      <td>0.2601</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+
+<!-- LIMITATION -->
+
+<div class="section">
+
+<h2>
+Interpretation & Limitations
+</h2>
+
+<div class="warning">
+
+<strong>
+Important:
+</strong>
+
+<br><br>
+
+This dashboard summarizes historical model evaluation.
+
+The results do not guarantee future performance,
+investment returns, or profitability.
+
+Statistical significance tests indicate whether
+historical differences are distinguishable from
+random variation under the selected test.
+
+Transaction costs, slippage, market impact,
+position sizing and portfolio risk management
+are not modeled here.
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+Bayesian Regime Detection Engine ·
+Final Evaluation Dashboard
+
+</div>
+
+
+</body>
+
+</html>

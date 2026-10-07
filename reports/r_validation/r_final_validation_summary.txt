@@ -1,0 +1,24 @@
+============================================================
+STEP 29E - FINAL R VALIDATION SUMMARY
+============================================================
+
+Feature observations: 4064
+Bayesian observations: 813
+
+CHANGEPOINT:
+Detected changepoints: 16
+
+CONFORMAL:
+Target coverage: 0.9
+Empirical coverage: 0.829918
+Average prediction set size: 0.94877
+Conformal threshold: 0.2542
+
+VALIDATION:
+All checks passed: TRUE
+
+OUTPUTS:
+C:/BAYESIAN_REGIME_ENGINE/reports/r_validation/r_changepoint_results.csv
+C:/BAYESIAN_REGIME_ENGINE/reports/r_validation/r_conformal_results.csv
+
+============================================================

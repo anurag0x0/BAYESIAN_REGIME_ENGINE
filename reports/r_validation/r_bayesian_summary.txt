@@ -1,0 +1,54 @@
+============================================================
+R BAYESIAN REGIME MODEL SUMMARY
+============================================================
+
+Input rows: 4064
+Training rows: 3251
+Test rows: 813
+High volatility threshold: 0.01117536488
+
+MODEL:
+Bayesian Logistic Regression using rstanarm
+
+TARGET:
+High volatility regime
+
+PREDICTOR:
+Training-standardized daily return
+
+METRICS:
+Accuracy: 0.889299
+Brier Score: 0.118006
+Log Loss: 0.409716
+Precision: NA - no positive predictions
+Recall: 0
+F1 Score: NA - no positive predictions
+Mean posterior uncertainty: 0.008799
+
+PREDICTION DISTRIBUTION:
+Predicted positive: 0
+Predicted negative: 813
+Actual positive: 90
+Actual negative: 723
+
+CONFUSION MATRIX:
+True Negative: 723
+False Positive: 0
+False Negative: 90
+True Positive: 0
+
+POSTERIOR MODEL:
+Posterior draws: 1000
+
+OUTPUT FILES:
+C:/BAYESIAN_REGIME_ENGINE/reports/r_validation/r_bayesian_regime.csv
+C:/BAYESIAN_REGIME_ENGINE/reports/r_validation/r_bayesian_calibration.csv
+C:/BAYESIAN_REGIME_ENGINE/reports/r_validation/r_bayesian_metrics.csv
+C:/BAYESIAN_REGIME_ENGINE/reports/r_validation/r_bayesian_diagnostics.txt
+C:/BAYESIAN_REGIME_ENGINE/models/r_bayesian/r_bayesian_regime_model.rds
+
+NOTE:
+Precision and F1 are undefined when the model produces zero positive predictions.
+They are intentionally reported as NA rather than being artificially converted to zero.
+
+============================================================

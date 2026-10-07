@@ -1,0 +1,24 @@
+{
+    "model": "TimesFM 2.5 200M PyTorch",
+    "model_id": "google/timesfm-2.5-200m-pytorch",
+    "context_length": 512,
+    "forecast_horizon": 1,
+    "batch_size": 16,
+    "train_ratio": 0.8,
+    "continuous_quantile_head": true,
+    "device": "cpu",
+    "random_seed": 42,
+    "quantile_mapping": {
+        "0": "mean",
+        "1": "q10",
+        "2": "q20",
+        "3": "q30",
+        "4": "q40",
+        "5": "q50",
+        "6": "q60",
+        "7": "q70",
+        "8": "q80",
+        "9": "q90"
+    },
+    "probability_method": "Normal approximation using q10/q90 dispersion"
+}

@@ -1,0 +1,39 @@
+STEP 26 - CONFORMAL PREDICTION
+======================================================================
+
+Input file: C:\BAYESIAN_REGIME_ENGINE\data\processed\advanced_ensemble_predictions.csv
+Total observations: 325
+Calibration observations: 130
+Test observations: 195
+
+Target coverage:
+0.9000
+
+SPLIT CONFORMAL
+----------------------------------------------------------------------
+Threshold: 0.52562081
+Empirical coverage: 0.825641
+Coverage gap: -0.074359
+Average set size: 1.441026
+
+APS
+----------------------------------------------------------------------
+Threshold: 1.00000000
+Empirical coverage: 1.000000
+Coverage gap: 0.100000
+Average set size: 2.000000
+
+DISTRIBUTION SHIFT
+----------------------------------------------------------------------
+calibration_probability_mean: 0.49946639
+test_probability_mean: 0.48561427
+absolute_mean_shift: 0.01385212
+calibration_probability_std: 0.03646615
+test_probability_std: 0.04753391
+absolute_std_shift: 0.01106776
+
+INTERPRETATION
+----------------------------------------------------------------------
+Conformal prediction provides empirical coverage diagnostics for the held-out chronological test period.
+Coverage is reported from the actual test outcomes and is not artificially forced to the target level.
+Distribution shift is monitored using changes in the ensemble probability distribution between calibration and test periods.

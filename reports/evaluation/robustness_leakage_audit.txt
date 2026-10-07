@@ -1,0 +1,14 @@
+STEP 13: ROBUSTNESS & DATA LEAKAGE AUDIT
+============================================================
+Rows: 4064
+Columns: 26
+
+ERRORS:
+- None detected
+
+WARNINGS:
+- Verify that scalers are fitted on training data only.
+- Ensure target_next_day_direction is never used as a feature.
+- Verify that all input features are available at forecast time.
+- HMM model.predict on the full sequence may create retrospective regime labels. Use causal walk-forward filtering for live forecasts.
+- This audit does not prove all model code is leakage-free.

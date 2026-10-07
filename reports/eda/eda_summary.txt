@@ -1,0 +1,37 @@
+NIFTY 50 - EXPLORATORY DATA ANALYSIS
+=============================================
+
+DATASET OVERVIEW
+---------------------------------------------
+Total Records: 4064
+Total Columns: 26
+Start Date: 2010-03-17
+End Date: 2026-09-30
+Missing Values: 0
+Duplicate Dates: 0
+
+PRICE SUMMARY
+---------------------------------------------
+Starting Close: 5231.90
+Ending Close: 22620.45
+Total Price Change: 332.36%
+Minimum Close: 4544.20
+Maximum Close: 26328.55
+
+DAILY RETURN SUMMARY
+---------------------------------------------
+Mean Return: 0.04157%
+Median Return: 0.05183%
+Std Deviation: 1.03467%
+Minimum Return: -12.98047%
+Maximum Return: 8.76321%
+Positive Days: 2152
+Negative Days: 1908
+Zero Return Days: 4
+
+VOLATILITY SUMMARY
+---------------------------------------------
+Average 20-Day Volatility: 0.92581%
+Maximum 20-Day Volatility: 5.70002%
+
+Note: Historical statistics do not guarantee future market performance.

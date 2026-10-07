@@ -1,0 +1,21 @@
+STEP 29C - R HMM REGIME VALIDATION
+============================================
+Input rows: 4064
+Training rows: 3251
+Test rows: 813
+Training mean return: 4.537323e-04
+Training return SD: 1.082986e-02
+Probability validation: TRUE
+Python comparison available: TRUE
+Python/R exact label match rate: 0.6826
+
+R state statistics:
+      r_regime_label observations   mean_return  volatility
+              <char>        <int>         <num>       <num>
+1:    Low Volatility         2107  0.0007245114 0.006469764
+2: Medium Volatility         1894  0.0001095606 0.011431211
+3:   High Volatility           63 -0.0007090928 0.039956798
+
+Output files:
+C:/BAYESIAN_REGIME_ENGINE/reports/r_validation/r_hmm_regime_validation.csv
+C:/BAYESIAN_REGIME_ENGINE/reports/r_validation/r_hmm_regimes.png

@@ -1,0 +1,44 @@
+{
+  "step": 27,
+  "project": "Bayesian Regime Detection Engine",
+  "input_market_file": "data\\processed\\nifty50_features.csv",
+  "input_regime_file": "data\\processed\\causal_regime_integrated_predictions.csv",
+  "date_column_used": "forecast_date",
+  "regime_column_used": "regime_label",
+  "simulation_method": "Regime-conditioned empirical bootstrap",
+  "n_simulations": 10000,
+  "horizon_days": 20,
+  "random_seed": 42,
+  "var_levels": [
+    0.9,
+    0.95,
+    0.99
+  ],
+  "min_regime_observations": 30,
+  "regimes": [
+    "Low_Volatility",
+    "Medium_Volatility",
+    "High_Volatility"
+  ],
+  "risk_metrics": [
+    "mean_return",
+    "median_return",
+    "std_return",
+    "probability_of_loss",
+    "probability_loss_gt_5pct",
+    "probability_loss_gt_10pct",
+    "probability_gain_gt_5pct",
+    "VaR_90",
+    "VaR_95",
+    "VaR_99",
+    "CVaR_90",
+    "CVaR_95",
+    "CVaR_99"
+  ],
+  "crisis_scenarios": [
+    "Historical_Worst_Day",
+    "Historical_1pct_Tail",
+    "Historical_5pct_Tail",
+    "Historical_10pct_Tail"
+  ]
+}

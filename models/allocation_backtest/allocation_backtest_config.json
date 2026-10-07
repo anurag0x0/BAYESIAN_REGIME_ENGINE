@@ -1,0 +1,24 @@
+{
+  "step": 28,
+  "project": "Bayesian Regime Detection Engine",
+  "strategy": "Regime Overlay Allocation",
+  "allocation_map": {
+    "Low_Volatility": 1.0,
+    "Medium_Volatility": 0.6,
+    "High_Volatility": 0.25
+  },
+  "cash_return": 0.0,
+  "trading_days": 252,
+  "risk_free_rate": 0.0,
+  "look_ahead_bias_control": "Previous day's regime applied to current day's return",
+  "benchmark": "NIFTY 50 daily return",
+  "input_regime_file": "data\\processed\\causal_regime_integrated_predictions.csv",
+  "input_market_file": "data\\processed\\nifty50_features.csv",
+  "outputs": [
+    "data\\processed\\regime_overlay_backtest.csv",
+    "reports\\allocation_backtest\\performance_metrics.csv",
+    "reports\\allocation_backtest\\yearly_performance.csv",
+    "reports\\allocation_backtest\\regime_performance.csv",
+    "reports\\allocation_backtest\\regime_changes.csv"
+  ]
+}

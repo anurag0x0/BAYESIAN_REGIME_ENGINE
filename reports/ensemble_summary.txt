@@ -1,0 +1,11 @@
+ENSEMBLE MODEL SUMMARY
+======================
+Common forecast dates: 813
+Models: Bayesian Direction, SMC Particle Filter, Chronos
+Ensemble method: Equal-weight probability average
+Accuracy: 0.5264
+Brier Score: 0.2562
+Forecast start: 2023-06-15
+Forecast end: 2026-09-30
+
+Note: These are historical evaluation metrics, not a guarantee of future forecasting performance.

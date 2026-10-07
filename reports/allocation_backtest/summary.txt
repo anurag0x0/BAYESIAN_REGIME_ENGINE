@@ -1,0 +1,65 @@
+STEP 28 - REGIME OVERLAY ALLOCATION BACKTEST
+======================================================================
+
+BACKTEST PERIOD
+----------------------------------------------------------------------
+Start: 2023-06-16
+End: 2026-09-30
+Observations: 812
+
+ALLOCATION RULE
+----------------------------------------------------------------------
+Low Volatility: 100% equity / 0% cash
+Medium Volatility: 60% equity / 40% cash
+High Volatility: 25% equity / 75% cash
+Cash return assumption: 0%
+
+STRATEGY PERFORMANCE
+----------------------------------------------------------------------
+observations: 812.00000000
+total_return: 0.12422155
+annualized_return: 0.03700685
+annualized_volatility: 0.10726064
+sharpe_ratio: 0.39252392
+sortino_ratio: 0.46083506
+maximum_drawdown: -0.12918587
+ending_wealth: 1.12422155
+
+BENCHMARK PERFORMANCE
+----------------------------------------------------------------------
+observations: 812.00000000
+total_return: 0.21041998
+annualized_return: 0.06105717
+annualized_volatility: 0.12922534
+sharpe_ratio: 0.52333230
+sortino_ratio: 0.64537155
+maximum_drawdown: -0.15766678
+ending_wealth: 1.21041998
+
+ACTIVE PERFORMANCE
+----------------------------------------------------------------------
+annualized_active_return: -0.02552543
+tracking_error: 0.04586326
+information_ratio: -0.55655514
+
+REGIME PERFORMANCE
+----------------------------------------------------------------------
+           regime  observations  average_equity_weight  strategy_return  benchmark_return  strategy_volatility  benchmark_volatility  strategy_max_drawdown  benchmark_max_drawdown
+  High_Volatility            33               0.316667        -0.020348          0.116235             0.183448              0.294708              -0.015621               -0.041836
+   Low_Volatility           567               0.975309         0.196883          0.185693             0.108690              0.110550              -0.075028               -0.080096
+Medium_Volatility           212               0.657547        -0.041200         -0.085448             0.085760              0.133064              -0.117156               -0.194560
+
+YEARLY PERFORMANCE
+----------------------------------------------------------------------
+ year  observations  strategy_return  benchmark_return  strategy_volatility  benchmark_volatility  strategy_max_drawdown  benchmark_max_drawdown  active_return
+ 2023           133         0.146353          0.162847             0.092570              0.094946              -0.066119               -0.066119      -0.016494
+ 2024           246         0.034017          0.088048             0.122608              0.140640              -0.084175               -0.109328      -0.054030
+ 2025           249         0.080902          0.105089             0.099813              0.118111              -0.063086               -0.087066      -0.024187
+ 2026           184        -0.122555         -0.134298             0.104125              0.147319              -0.129186               -0.151818       0.011742
+
+IMPORTANT METHODOLOGICAL NOTE
+----------------------------------------------------------------------
+The allocation applied to each day's return uses the previous observation's detected regime. This prevents the current day's realized return from determining the same day's allocation.
+The benchmark is the NIFTY 50 daily return series from the project dataset.
+The allocation percentages are illustrative research assumptions and are not investment recommendations.
+The available causal-regime integration file determines the actual backtest date range. No missing historical regime predictions are fabricated.

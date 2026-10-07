@@ -1,0 +1,13 @@
+SEQUENTIAL MONTE CARLO - PARTICLE FILTER
+========================================
+Total records: 4064
+Training records: 3251
+Testing records: 813
+Particles: 3000
+Process sigma: 0.00054149
+Observation sigma: 0.01082986
+Resampling events: 152
+Test direction accuracy: 0.5277
+Test Brier score: 0.2506
+
+Note: Experimental particle-filter baseline. Not a validated trading strategy. Further walk-forward evaluation and calibration are required.

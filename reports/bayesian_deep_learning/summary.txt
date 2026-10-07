@@ -1,0 +1,23 @@
+BAYESIAN DEEP LEARNING - MC DROPOUT
+============================================================
+Model: Feed-Forward Neural Network + MC Dropout
+Device: cpu
+Training observations: 3251
+Test observations: 813
+Feature count: 24
+MC samples: 100
+Dropout rate: 0.25
+
+Performance:
+Accuracy: 0.507995
+Precision: 0.531646
+Recall: 0.586047
+F1: 0.557522
+ROC-AUC: 0.513814
+Brier Score: 0.258387
+Log Loss: 0.711774
+
+Uncertainty:
+Mean predictive std: 0.087321
+Mean confidence: 0.590384
+Mean entropy: 0.666313

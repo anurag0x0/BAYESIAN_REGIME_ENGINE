@@ -1,0 +1,15 @@
+CHRONOS TIME-SERIES FOUNDATION MODEL BENCHMARK
+===============================================
+Model: amazon/chronos-t5-small
+Total source records: 4064
+Training history rows: 3251
+Test forecasts: 813
+Context length: 256
+Prediction horizon: 1 trading day
+Device: cpu
+
+Direction accuracy: 0.5351
+Brier score: 0.3431
+Return MAE: 0.00586889
+
+Note: Experimental zero-shot benchmark. Metrics do not establish profitability or future performance. Compare with simple baselines and perform further walk-forward validation.

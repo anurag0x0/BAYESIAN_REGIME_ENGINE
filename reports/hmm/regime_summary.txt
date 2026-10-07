@@ -1,0 +1,44 @@
+HMM MARKET REGIME DETECTION REPORT
+=============================================
+Total records: 4064
+Training records: 3251
+Training ratio: 80%
+Number of hidden states: 3
+Model converged: True
+Training iterations: 49
+
+Full data period: 2010-03-17 to 2026-09-30
+Training period: 2010-03-17 to 2023-06-14
+
+REGIME SUMMARY
+---------------------------------------------
+Hidden state: 2
+Regime: Low Volatility
+Records: 2012
+Percentage: 49.51%
+Mean 20-day volatility: 0.006450
+Mean daily return: 0.000720
+
+Hidden state: 0
+Regime: Medium Volatility
+Records: 1696
+Percentage: 41.73%
+Mean 20-day volatility: 0.010563
+Mean daily return: 0.000115
+
+Hidden state: 1
+Regime: High Volatility
+Records: 356
+Percentage: 8.76%
+Mean 20-day volatility: 0.018909
+Mean daily return: 0.000127
+
+IMPORTANT NOTES
+---------------------------------------------
+Regime names are assigned using training-period volatility.
+HMM states are latent statistical patterns and do not
+guarantee specific market conditions or future direction.
+Full-sequence decoding is retrospective and can use
+future observations to infer earlier states.
+Use causal walk-forward inference for valid backtesting
+and live forecasting.

@@ -1,0 +1,11 @@
+{
+    "model": "amazon/chronos-t5-small",
+    "train_ratio": 0.8,
+    "context_length": 256,
+    "prediction_length": 1,
+    "num_samples": 100,
+    "batch_size": 16,
+    "device": "cpu",
+    "test_forecasts": 813,
+    "note": "Zero-shot pretrained model with one-step-ahead walk-forward forecasting."
+}

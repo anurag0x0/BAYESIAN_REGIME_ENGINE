@@ -1,0 +1,57 @@
+STEP 25 - ADVANCED ENSEMBLE SUMMARY
+======================================================================
+
+Total aligned observations: 812
+Validation observations: 487
+Test observations: 325
+Validation split: chronological
+
+Models:
+  - Bayesian_Ridge
+  - SMC
+  - Chronos
+  - TimesFM
+  - Bayesian_Deep_Learning
+
+Actual direction policy:
+Reference actual direction is derived from actual realized return.
+Positive return = UP (1).
+Zero or negative return = DOWN (0).
+
+BMA-style weighting:
+Validation predictive log score softmax.
+This is not exact Bayesian model posterior probability.
+
+Exact WAIC/LOO:
+Not computed because common pointwise posterior log-likelihood draws are not available for all ensemble members.
+
+TEST METRICS
+----------------------------------------------------------------------
+                     model ensemble_type  accuracy  brier_score  log_loss  roc_auc
+            Bayesian_Ridge    individual  0.498462     0.250508  0.694168 0.495834
+                       SMC    individual  0.603077     0.237062  0.666967 0.663220
+                   Chronos    individual  0.529231     0.301374  1.060064 0.550860
+                   TimesFM    individual  0.532308     0.255356  0.704504 0.515148
+    Bayesian_Deep_Learning    individual  0.575385     0.242581  0.677624 0.591570
+     Equal_Weight_Ensemble      ensemble  0.560000     0.242771  0.678504 0.600318
+        BMA_Style_Ensemble      ensemble  0.658462     0.242005  0.677099 0.663940
+      Constrained_Stacking      ensemble  0.667692     0.235415  0.663716 0.720556
+Logit_Constrained_Stacking      ensemble  0.667692     0.234532  0.661811 0.727107
+
+BEST MODEL BY BRIER SCORE
+----------------------------------------------------------------------
+model            Logit_Constrained_Stacking
+ensemble_type                      ensemble
+accuracy                           0.667692
+brier_score                        0.234532
+log_loss                           0.661811
+roc_auc                            0.727107
+
+ACTUAL DIRECTION RECONCILIATION
+----------------------------------------------------------------------
+                 model  actual_return_vs_label_mismatches  has_actual_return  canonical_actual_direction_mismatches
+        Bayesian_Ridge                                  0               True                                      0
+                   SMC                               1887               True                                      0
+               Chronos                                  0               True                                      0
+               TimesFM                                383               True                                      0
+Bayesian_Deep_Learning                                  0              False                                    383

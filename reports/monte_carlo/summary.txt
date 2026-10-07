@@ -1,0 +1,52 @@
+STEP 27 - MONTE CARLO RISK ENGINE
+======================================================================
+
+Purpose:
+Regime-conditioned Monte Carlo simulation and downside risk analysis for the Indian equity market.
+
+Simulation count: 10000
+Simulation horizon: 20 trading days
+Sampling method: regime-conditioned empirical bootstrap
+Random seed: 42
+
+OVERALL RISK
+----------------------------------------------------------------------
+mean_return: 0.00475463
+median_return: 0.00437973
+std_return: 0.03619108
+probability_of_loss: 0.44920000
+probability_loss_gt_5pct: 0.06380000
+probability_loss_gt_10pct: 0.00310000
+probability_gain_gt_5pct: 0.10480000
+VaR_90: 0.04033493
+VaR_95: 0.05502431
+VaR_99: 0.08172081
+CVaR_90: 0.05940453
+CVaR_95: 0.07185276
+CVaR_99: 0.09646207
+
+REGIME RISK
+----------------------------------------------------------------------
+          scenario  horizon_days  observations  mean_return  median_return  std_return  probability_of_loss  probability_loss_gt_5pct  probability_loss_gt_10pct  probability_gain_gt_5pct   VaR_90   VaR_95   VaR_99  CVaR_90  CVaR_95  CVaR_99
+Overall_Historical            20           812     0.004755       0.004380    0.036191               0.4492                    0.0638                     0.0031                    0.1048 0.040335 0.055024 0.081721 0.059405 0.071853 0.096462
+    Low_Volatility            20           567     0.006167       0.005704    0.031552               0.4277                    0.0317                     0.0001                    0.0839 0.033755 0.044505 0.064196 0.047553 0.056633 0.075052
+ Medium_Volatility            20           212    -0.008289      -0.007730    0.037132               0.5811                    0.1308                     0.0078                    0.0566 0.055876 0.070644 0.096970 0.074865 0.087218 0.109747
+   High_Volatility            20            33     0.072488       0.072956    0.086414               0.1985                    0.0784                     0.0233                    0.6041 0.037866 0.068784 0.132977 0.080086 0.107624 0.164224
+
+HISTORICAL TAIL SCENARIOS
+----------------------------------------------------------------------
+             scenario  shock_return  one_day_loss  remaining_value
+ Historical_Worst_Day     -0.059294      0.059294         0.940706
+ Historical_1pct_Tail     -0.020894      0.020894         0.979106
+ Historical_5pct_Tail     -0.012866      0.012866         0.987134
+Historical_10pct_Tail     -0.009166      0.009166         0.990834
+
+METHODOLOGICAL NOTES
+----------------------------------------------------------------------
+1. Returns are sampled from observed historical returns.
+2. Regime-specific simulations use empirical regime-conditioned returns.
+3. No future returns are used to generate the simulated paths.
+4. VaR is an empirical lower-tail loss quantile.
+5. CVaR is the average simulated loss beyond the VaR threshold.
+6. Historical tail scenarios are based on observed return quantiles.
+7. Monte Carlo simulation is a risk-analysis framework and does not guarantee future market outcomes.

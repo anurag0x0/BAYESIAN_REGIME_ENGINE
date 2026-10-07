@@ -1,0 +1,34 @@
+CAUSAL HMM REGIME DETECTION SUMMARY
+=======================================================
+Total rows: 4064
+Training rows: 3251
+Testing rows: 813
+Features: ['daily_return', 'volatility_5d']
+Volatility feature: volatility_5d
+
+Training-only estimated state volatility:
+Low Volatility: 0.00525779
+Medium Volatility: 0.01004119
+High Volatility: 0.01963841
+
+Regime counts (all rows):
+regime_label
+Low Volatility       2036
+Medium Volatility    1621
+High Volatility       407
+
+Test-period regime counts:
+regime_label
+Low Volatility       567
+Medium Volatility    213
+High Volatility       33
+
+Method: causal forward filtering
+HMM parameters fitted on training period only.
+Scaler fitted on training period only.
+Future target excluded from model inputs.
+
+Limitation:
+Filtered probabilities are causal conditional estimates,
+but hidden-state meanings and fitted parameters can drift
+over time. No trading profitability is implied.

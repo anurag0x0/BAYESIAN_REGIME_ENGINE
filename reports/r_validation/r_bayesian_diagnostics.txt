@@ -1,0 +1,30 @@
+
+Model Info:
+ function:     stan_glm
+ family:       binomial [logit]
+ formula:      high_volatility ~ daily_return_scaled
+ algorithm:    sampling
+ sample:       1000 (posterior sample size)
+ priors:       see help('prior_summary')
+ observations: 3251
+ predictors:   2
+
+Estimates:
+                      mean   sd   10%   50%   90%
+(Intercept)         -1.1    0.0 -1.1  -1.1  -1.0 
+daily_return_scaled  0.0    0.0  0.0   0.0   0.1 
+
+Fit Diagnostics:
+           mean   sd   10%   50%   90%
+mean_PPD 0.3    0.0  0.2   0.3   0.3  
+
+The mean_ppd is the sample average posterior predictive distribution of the outcome variable (for details see help('summary.stanreg')).
+
+MCMC diagnostics
+                    mcse Rhat n_eff
+(Intercept)         0.0  1.0  684  
+daily_return_scaled 0.0  1.0  758  
+mean_PPD            0.0  1.0  784  
+log-posterior       0.0  1.0  444  
+
+For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).

@@ -1,0 +1,32 @@
+WALK-FORWARD BACKTEST REPORT
+=======================================================
+
+Observations: 812
+Chronological order: True
+Forecast sequence valid: True
+
+OVERALL PERFORMANCE
+=======================================================
+   model  observations  accuracy  brier_score
+Bayesian           812    0.5160       0.2492
+     SMC           812    0.5271       0.2507
+Ensemble           812    0.5271       0.2559
+
+YEAR-WISE PERFORMANCE
+=======================================================
+ year    model  observations  accuracy  brier_score
+ 2023 Bayesian           133    0.5940       0.2474
+ 2023      SMC           133    0.5714       0.2394
+ 2023 Ensemble           133    0.5865       0.2430
+ 2024 Bayesian           246    0.5122       0.2483
+ 2024      SMC           246    0.5285       0.2515
+ 2024 Ensemble           246    0.5407       0.2626
+ 2025 Bayesian           249    0.5181       0.2493
+ 2025      SMC           249    0.5100       0.2523
+ 2025 Ensemble           249    0.4980       0.2531
+ 2026 Bayesian           184    0.4620       0.2517
+ 2026      SMC           184    0.5163       0.2558
+ 2026 Ensemble           184    0.5054       0.2601
+
+LIMITATION
+This is a historical sequential evaluation. It does not establish future profitability. Transaction costs, slippage, market impact and position sizing are not modeled.

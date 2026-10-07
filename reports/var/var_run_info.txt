@@ -1,0 +1,10 @@
+REGIME-SWITCHING VAR MODEL
+==========================
+Matched records: 4064
+Training records: 3251
+Total regimes: 3
+Models trained: 3
+Features: daily_return, volatility_20d, momentum_5d, daily_range
+Maximum lags: 5
+
+Note: This is an exploratory regime-specific VAR fit. It is not a live trading signal or a validated forecast. The HMM regime labels may be retrospective; use causal walk-forward regime inference for proper backtesting.

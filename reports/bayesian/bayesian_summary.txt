@@ -1,0 +1,23 @@
+BAYESIAN DIRECTION MODEL REPORT
+=============================================
+Total valid records: 4063
+Training records: 3250
+Testing records: 813
+Training ratio: 80%
+Features: daily_return, volatility_20d, momentum_5d, daily_range, close_position
+
+TEST METRICS
+---------------------------------------------
+Direction accuracy: 0.5154
+Brier score: 0.2492
+Return MAE: 0.00585009
+
+INTERPRETATION
+---------------------------------------------
+Probabilities are model-based estimates, not certainties.
+A 0.5 threshold is used for descriptive direction labels.
+Accuracy alone does not establish forecasting value.
+Brier score measures probabilistic prediction error;
+lower values are better, with 0 being perfect.
+The test set is chronological and held out from fitting.
+Walk-forward evaluation and calibration checks are still needed.

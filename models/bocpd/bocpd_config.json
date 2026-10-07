@@ -1,0 +1,33 @@
+{
+    "project": "Bayesian Regime Detection Engine",
+    "step": 24,
+    "method": "Bayesian Online Changepoint Detection",
+    "observation": "NIFTY 50 daily return",
+    "hazard_rate": 0.016666666666666666,
+    "expected_prior_run_length": 60.0,
+    "max_run_length": 500,
+    "prior": {
+        "distribution": "Normal-Inverse-Gamma",
+        "mean": 0.0,
+        "kappa": 1.0,
+        "alpha": 1.0,
+        "beta": 5e-05
+    },
+    "thresholds": {
+        "change_point_alert": 0.2,
+        "strong_change_point": 0.5
+    },
+    "inputs": {
+        "features": "C:\\BAYESIAN_REGIME_ENGINE\\data\\processed\\nifty50_features.csv",
+        "causal_hmm": "C:\\BAYESIAN_REGIME_ENGINE\\data\\processed\\nifty50_regimes_causal.csv"
+    },
+    "outputs": {
+        "bocpd": "C:\\BAYESIAN_REGIME_ENGINE\\data\\processed\\bocpd_changepoints.csv",
+        "reconciliation": "C:\\BAYESIAN_REGIME_ENGINE\\data\\processed\\regime_reconciliation.csv",
+        "metrics": "C:\\BAYESIAN_REGIME_ENGINE\\reports\\bocpd\\metrics.csv",
+        "summary": "C:\\BAYESIAN_REGIME_ENGINE\\reports\\bocpd\\summary.txt",
+        "changepoint_plot": "C:\\BAYESIAN_REGIME_ENGINE\\reports\\bocpd\\changepoint_plot.png",
+        "run_length_plot": "C:\\BAYESIAN_REGIME_ENGINE\\reports\\bocpd\\run_length_plot.png"
+    },
+    "online_leakage_policy": "BOCPD processes observations sequentially and does not use future observations for the changepoint probability at time t."
+}

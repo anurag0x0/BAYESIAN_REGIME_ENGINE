@@ -1,0 +1,2 @@
+target_coverage,calibration_observations,test_observations,conformal_threshold,empirical_coverage,average_prediction_set_size
+0.9,325,488,0.254199662573141,0.829918032786885,0.948770491803279

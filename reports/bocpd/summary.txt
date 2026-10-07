@@ -1,0 +1,66 @@
+PROJECT 1A - STEP 24
+Bayesian Online Changepoint Detection + Online/Batch Reconciliation
+======================================================================
+
+PURPOSE
+Detect structural changes in NIFTY 50 daily returns using Bayesian Online Changepoint Detection and reconcile online change signals with causal batch HMM regimes.
+
+CONFIGURATION
+Hazard rate: 0.016666666666666666
+Expected prior run length: 60.00
+Maximum run length: 500
+Change point alert threshold: 0.2
+Strong change point threshold: 0.5
+
+BOCPD RESULTS
+observations: 4064.0
+alert_threshold: 0.2
+strong_threshold: 0.5
+hazard_rate: 0.016666666666666666
+expected_prior_run_length: 60.0
+changepoint_alert_count: 0.0
+strong_changepoint_count: 0.0
+maximum_changepoint_probability: 0.016670195436965428
+mean_changepoint_probability: 0.01666668177236385
+median_expected_run_length: 61.58042239697768
+batch_regime_change_count: 533.0
+online_change_event_count: 0.0
+confirmed_regime_changes: 0.0
+online_change_only: 0.0
+batch_change_only: 533.0
+no_change: 3531.0
+online_confirmation_rate: nan
+online_recall_of_batch_changes: 0.0
+
+TOP CHANGEPOINT EVENTS
+      date  daily_return  changepoint_probability  expected_run_length
+2012-09-21      0.024648                 0.016670            81.004713
+2012-09-27     -0.002463                 0.016669            84.885760
+2012-10-18      0.010326                 0.016669            92.300863
+2012-10-16     -0.006901                 0.016669            91.901922
+2012-09-26     -0.001842                 0.016668            88.428748
+2012-10-12     -0.005606                 0.016668            95.529508
+2012-10-15      0.001973                 0.016668            92.740091
+2012-10-25      0.002442                 0.016668            85.503974
+2012-09-25      0.000758                 0.016668            89.060683
+2012-10-17      0.002169                 0.016668            88.998470
+2012-09-24     -0.003787                 0.016668            88.896603
+2012-10-08     -0.012346                 0.016668            92.127030
+2012-05-08     -0.022330                 0.016668           245.909527
+2012-09-17      0.005800                 0.016668            71.249153
+2012-10-31      0.003894                 0.016668            88.232268
+2012-10-10     -0.009194                 0.016668            93.613829
+2012-10-19     -0.006024                 0.016668            92.750141
+2012-10-09      0.005039                 0.016668            91.677025
+2012-03-27      0.011361                 0.016668           219.715093
+2012-09-20     -0.008178                 0.016668            83.682471
+
+RECONCILIATION COUNTS
+NO_CHANGE: 3531
+BATCH_CHANGE_ONLY: 533
+
+VALIDATION
+STEP 24 validation passed: True
+
+INTERPRETATION
+BOCPD provides an online probability that a new statistical run/regime begins at each observation. The causal HMM provides a batch regime classification. Events where both systems indicate a transition are labelled CONFIRMED_REGIME_CHANGE. Online-only and batch-only events are retained separately for auditability rather than being silently forced into agreement.

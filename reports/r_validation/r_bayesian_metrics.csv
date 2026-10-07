@@ -1,0 +1,16 @@
+metric,value
+accuracy,0.88929889298893
+brier_score,0.118006294127311
+log_loss,0.409716375193659
+precision,
+recall,0
+f1,
+mean_posterior_uncertainty,0.00879874076290902
+true_negative,723
+false_positive,0
+false_negative,90
+true_positive,0
+predicted_positive_count,0
+predicted_negative_count,813
+actual_positive_count,90
+actual_negative_count,723

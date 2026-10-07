@@ -1,0 +1,29 @@
+{
+  "step": 25,
+  "project": "Bayesian Regime Detection Engine",
+  "models": [
+    "Bayesian_Ridge",
+    "SMC",
+    "Chronos",
+    "TimesFM",
+    "Bayesian_Deep_Learning"
+  ],
+  "validation_fraction": 0.4,
+  "random_state": 42,
+  "probability_floor": 1e-06,
+  "bma_style": {
+    "method": "validation log predictive score softmax",
+    "exact_bayesian_model_probability": false
+  },
+  "stacking": {
+    "probability_space": true,
+    "logit_space": true,
+    "nonnegative_weights": true,
+    "weights_sum_to_one": true
+  },
+  "actual_direction": {
+    "reference": "Bayesian Ridge actual return",
+    "positive_return": 1,
+    "zero_or_negative_return": 0
+  }
+}
